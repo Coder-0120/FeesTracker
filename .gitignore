@@ -1,0 +1,18 @@
+# Root-level node_modules (if any)
+node_modules/
+
+# Client dependencies
+client/node_modules/
+
+# Server dependencies
+server/node_modules/
+
+# Env files
+*.env
+
+# Logs
+*.log
+
+# Build output
+client/build/
+server/dist/
