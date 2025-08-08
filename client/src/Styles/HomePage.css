@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+.fees-hero {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(to right, #e3f2fd, #bbdefb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.fees-hero-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+  gap: 3rem;
+}
+
+.hero-text-box {
+  flex: 1;
+  animation: slideInLeft 1s ease-out;
+}
+
+.hero-text-box h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #0d47a1;
+  margin-bottom: 1rem;
+}
+
+.hero-text-box h1 span {
+  color: #1e88e5;
+}
+
+.hero-text-box p {
+  font-size: 1.25rem;
+  color: #37474f;
+  margin-bottom: 2rem;
+}
+
+/* CTA Button */
+.cta-button {
+  background: transparent;
+  color: #0d47a1;
+  font-weight: 600;
+  padding: 0.8rem 2rem;
+  border: 2px solid #1e88e5;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button::before {
+  content: "";
+  position: absolute;
+  background: #fefefe;
+  height: 100%;
+  width: 0;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: 0.3s;
+}
+
+.cta-button:hover::before {
+  width: 100%;
+}
+
+.cta-button:hover {
+  color: rgb(0, 34, 255);
+  font-weight: 900;
+  box-shadow: 4px 4px 4px rgb(67, 217, 255);
+  transform: translateY(-4px);
+}
+
+/* Image box */
+.hero-image-box {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  animation: slideInRight 1s ease-out;
+}
+
+.hero-image-box img {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Animations */
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .fees-hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text-box h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero-text-box p {
+    font-size: 1.1rem;
+  }
+
+  .hero-image-box {
+    margin-top: 2rem;
+  }
+}
