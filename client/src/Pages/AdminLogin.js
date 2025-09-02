@@ -38,13 +38,14 @@ const AdminLogin = () => {
         <div className="col-md-6">
           <form onSubmit={handleLogin} className="border p-3 shadow-sm" style={{ backgroundColor: '#9fd1f7ff',borderRadius:"15px" }}>
             <div className="mb-3">
-              <label htmlFor="rollNumber" className="form-label">Email</label>
+              <label htmlFor="email" className="form-label">Email</label>
               <input
                 type="text"
                 className="form-control"
                 name='email'
                 value={admin.email}
                 onChange={handlechange}
+                placeholder='Enter your email'
                 required
               />
             </div>
@@ -56,6 +57,7 @@ const AdminLogin = () => {
                 name='password'
                 value={admin.password}
                 onChange={handlechange}
+                placeholder='Enter your password'
                 required
               />
             </div>

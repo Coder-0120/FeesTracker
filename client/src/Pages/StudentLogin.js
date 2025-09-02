@@ -44,6 +44,7 @@ const StudentLogin = () => {
                 value={rollNumber}
                 onChange={(e) => setRollNumber(e.target.value)}
                 required
+                placeholder='Enter your roll number'
               />
             </div>
             <div className="mb-3">
@@ -54,6 +55,7 @@ const StudentLogin = () => {
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                placeholder='Enter your password'
                 required
               />
             </div>

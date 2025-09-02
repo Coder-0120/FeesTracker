@@ -77,6 +77,7 @@ const StudentRegister = () => {
                 value={student.name}
                 onChange={handleChange}
                 required
+                placeholder="Enter your full name"
               />
             </div>
             <div className="mb-3">
@@ -87,6 +88,7 @@ const StudentRegister = () => {
                 name="rollNumber"
                 value={student.rollNumber}
                 onChange={handleChange}
+                placeholder="Enter your roll number"
                 required
               />
             </div>
@@ -126,6 +128,7 @@ const StudentRegister = () => {
                 name="email"
                 value={student.email}
                 onChange={handleChange}
+                placeholder="Enter your email"
                 required
               />
             </div>
@@ -137,6 +140,7 @@ const StudentRegister = () => {
                 name="password"
                 value={student.password}
                 onChange={handleChange}
+                placeholder="Enter your password"
                 required
               />
             </div>
@@ -148,6 +152,7 @@ const StudentRegister = () => {
                 name="confirmPassword"
                 value={student.confirmPassword}
                 onChange={handleChange}
+                placeholder="Confirm your password"
                 required
               />
             </div>

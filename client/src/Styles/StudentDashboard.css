@@ -3,6 +3,9 @@
   background: linear-gradient(to bottom right, #7892d8, #e0f7fa);
   min-height: 100vh;
 }
+th,tr{
+  border: 1px solid #000000;
+}
 
 /* Header card styling */
 .header-card {
@@ -28,7 +31,8 @@
 }
 
  .pd {
-  background-image: linear-gradient(to bottom right,#41e2fa, #30d6ef, #79e2f2);
+  /* background-image: linear-gradient(to bottom right,#41e2fa, #30d6ef, #79e2f2); */
+  background-image: linear-gradient(to right,#51c1fd,hsl(213, 95%, 62%));
   box-shadow: 4px 4px 18px rgba(0, 0, 0, 0.15);
   border-radius: 14px;
   padding: 1.5rem;
