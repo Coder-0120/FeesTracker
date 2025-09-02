@@ -19,7 +19,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm" style={{ position: "sticky", top: 0, zIndex: 1000 }}>
+    <nav className="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm" style={{ position: "sticky", top: 0, zIndex: 1000, background: "linear-gradient(90deg, #1e3c72, #2a5298)" }}>
       <div className="container">
         <Link className="navbar-brand fw-bold  " to="/">FeesTracker</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">

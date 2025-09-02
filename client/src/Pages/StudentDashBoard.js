@@ -42,7 +42,8 @@ const StudentDashboard = () => {
         <p><strong>Email:</strong> {studentData.email}</p>
       </div>
 
-      <div className="pd card p-3 shadow-sm" style={{ backgroundImage: "linear-gradient(to bottom right, #fdfeff,#d0ffda ,#b5d0f3)", boxShadow: "5px 5px 15px rgba(207, 27, 27, 0.1)" }}>
+      <div className="pd card p-3 shadow-sm" style={{   backgroundImage: "linear-gradient(to bottom right,#41e2fa, #30d6ef, #79e2f2)"
+, boxShadow: "5px 5px 15px rgba(207, 27, 27, 0.1)" }}>
         <h5>Fee Status</h5>
         <table className="table table-bordered mt-3">
           <thead >
