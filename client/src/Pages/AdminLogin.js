@@ -31,11 +31,12 @@ const AdminLogin = () => {
   };
 
   return (
+    // 9fd1f7ff
 
-    <div className="container mt-5" >
+    <div className="container mt-5"  >
       <h2 className="mb-4 text-center">Admin Login</h2>
       <div className="row justify-content-center">
-        <div className="col-md-6">
+        <div className="col-md-6 row-md-12">
           <form onSubmit={handleLogin} className="border p-3 shadow-sm" style={{ backgroundColor: '#9fd1f7ff',borderRadius:"15px" }}>
             <div className="mb-3">
               <label htmlFor="email" className="form-label">Email</label>
