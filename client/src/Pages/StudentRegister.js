@@ -67,7 +67,7 @@ const StudentRegister = () => {
       <h2 className="mb-4 text-center">Student Registration</h2>
       <div className="row justify-content-center">
         <div className="col-md-6">
-          <form onSubmit={handleRegister} className="border p-3 shadow-sm">
+          <form onSubmit={handleRegister} className="border p-3 shadow-sm" style={{ backgroundColor: '#d0e1f2ff',borderRadius:"15px" }}>
             <div className="mb-3">
               <label className="form-label">Full Name</label>
               <input

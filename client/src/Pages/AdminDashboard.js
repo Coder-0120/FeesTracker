@@ -38,7 +38,7 @@ const AdminDashboard = () => {
   ];
 
   return (
-    <div className="admin-dashboard">
+    <div className="admin-dashboard" style={{  background: "linear-gradient(to right, #e3f2fd, #bbdefb)" }}>
       <h2 className="dashboard-title">Admin Dashboard</h2>
       <div className="card-grid">
         {cards.map((card, index) => (
