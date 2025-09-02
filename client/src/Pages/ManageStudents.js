@@ -2,9 +2,9 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import "../Styles/ManageStudents.css";
 const branches = [
-  { name: "CSE", color: "#ffccd5" },
-  { name: "ECE", color: "#d0f4de" },
-  { name: "ME", color: "#cce3ff" },
+  { name: "CSE", color: "#f08686ff" },
+  { name: "ECE", color: "#8df9b7ff" },
+  { name: "ME", color: "#75cbf6ff" },
   { name: "CE", color: "#fce1a8" },
 ];
 

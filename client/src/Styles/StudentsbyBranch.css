@@ -40,7 +40,7 @@
 .students-table td {
     padding: 12px 15px;
     text-align: left;
-    border: 1px solid #e0e0e0;
+    border: 2px solid #067894;
     min-width: 100px; 
 }
 
@@ -64,11 +64,14 @@
 }
 
 .table-wrapper {
+      /* border: 1px solid #067894; */
+
   overflow-x: auto;
   max-height: 600px; /* or whatever fits your layout */
   overflow-y: auto;
 }
 .students-toolbar {
+  
   display: flex;
   justify-content: space-between;
   align-items: center;

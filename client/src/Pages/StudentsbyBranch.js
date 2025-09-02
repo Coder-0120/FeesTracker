@@ -208,7 +208,7 @@ const StudentsbyBranch = () => {
                       return (
                         <td
                           key={i}
-                          style={{ border: "2px solid #ccc" }}
+                          style={{ border: "2px solid #067894" }}
                           className={
                             !isEditing
                               ? status === "Paid"

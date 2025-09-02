@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const StudentLogin = () => {
   const [rollNumber, setRollNumber] = useState('');
@@ -33,7 +34,7 @@ const StudentLogin = () => {
       <h2 className="mb-4 text-center">Student Login</h2>
       <div className="row justify-content-center">
         <div className="col-md-6">
-          <form onSubmit={handleLogin} className="border p-3 shadow-sm" style={{ backgroundColor: '#d0e1f2ff',borderRadius:"15px" }}>
+          <form onSubmit={handleLogin} className="border p-3 shadow-sm" style={{ backgroundColor: '#9fd1f7ff',borderRadius:"15px" }}>
             <div className="mb-3">
               <label htmlFor="rollNumber" className="form-label">Roll Number</label>
               <input
@@ -57,6 +58,7 @@ const StudentLogin = () => {
               />
             </div>
             <button type="submit" className="btn btn-primary w-100 ">Login</button>
+            <p className="text-center mt-3">Don't have an account? <Link to="/student-register">Register</Link></p>
           </form>
         </div>
       </div>

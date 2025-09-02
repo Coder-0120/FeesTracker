@@ -24,6 +24,7 @@
 
 .hero-text-box {
   flex: 1;
+  margin-top: -50px;
   animation: slideInLeft 1s ease-out;
 }
 
@@ -121,7 +122,7 @@
 }
 
 /* Responsive */
-@media (max-width: 900px) {
+/* @media (max-width: 900px) {
   .fees-hero-content {
     flex-direction: column;
     text-align: center;
@@ -137,5 +138,28 @@
 
   .hero-image-box {
     margin-top: 2rem;
+  }
+} */
+@media (max-width: 900px) {
+  .fees-hero-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem; /* add space between text and image */
+  }
+
+  .hero-text-box {
+    margin-top: 0; /* reset margin so heading is visible */
+  }
+
+  .hero-text-box h1 {
+    font-size: 2.2rem; /* slightly smaller heading for mobile */
+  }
+
+  .hero-text-box p {
+    font-size: 1rem;
+  }
+
+  .hero-image-box {
+    margin-top: 1.5rem;
   }
 }

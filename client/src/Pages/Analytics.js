@@ -5,7 +5,7 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid,
 } from "recharts";
 
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#AA00FF', '#FF4560'];
+const COLORS = ['#0088FE', '#00C49F', '#ee7716ff', '#FF8042', '#AA00FF', '#FF4560'];
 
 const Analytics = () => {
   const [branchData, setBranchData] = useState([]);
@@ -32,10 +32,10 @@ const Analytics = () => {
 
   return (
     <div style={{ padding: "1.5rem" }}>
-      <h2 style={{ marginBottom: "2rem" }}>Analytics Overview</h2>
+      <h2 style={{ marginBottom: "2rem", textAlign: "center" }}>Analytics Overview</h2>
 
       <div style={{ display: "flex", justifyContent: "space-between", gap: "2rem", flexWrap: "wrap" }}>
-        <div>
+        <div style={{border: "2px solid #067894", borderRadius: "10px", padding: "1rem",boxShadow:" 5px 5px 20px rgba(0, 0, 0, 0.1)",backgroundColor:"#99d3faff"}}>
           <h3>Student Distribution by Branch</h3>
           <ResponsiveContainer width={400} height={400}>
             <PieChart>
@@ -55,9 +55,9 @@ const Analytics = () => {
             </PieChart>
           </ResponsiveContainer>
         </div>
-         <div>
+         <div style={{border: "2px solid #067894", borderRadius: "10px",padding:"1rem",boxShadow:" 5px 5px 20px rgba(0, 0, 0, 0.1)",backgroundColor:"#99d3faff"}}>
           <h3>Students Paid Fees (Semester-wise)</h3>
-          <ResponsiveContainer width={480} height={400} >
+          <ResponsiveContainer width={400} height={400} >
             <BarChart data={feeSemData}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="semester" />
@@ -69,7 +69,7 @@ const Analytics = () => {
           </ResponsiveContainer>
         </div>
 
-        <div>
+        <div style={{border: "2px solid #067894", borderRadius: "10px", padding: "1rem",boxShadow:" 5px 5px 20px rgba(0, 0, 0, 0.1)",backgroundColor:"#99d3faff"}}>
           <h3>Student Distribution by Year</h3>
           <ResponsiveContainer width={400} height={400}>
             <PieChart>
