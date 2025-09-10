@@ -14,7 +14,11 @@ const AdminAlerts = () => {
 
   const fetchAlerts = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/admin/alerts`);
+      const res = await axios.get(`http://localhost:5000/api/admin/alerts`,{
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
+        },
+      });
       setAlerts(res.data);
     } catch (err) {
       console.error("Error fetching alerts:", err);

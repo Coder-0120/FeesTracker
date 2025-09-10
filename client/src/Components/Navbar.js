@@ -5,15 +5,18 @@ import "../Styles/Navbar.css";
 const Navbar = () => {
   const navigate = useNavigate();
 
-  const adminInfo = JSON.parse(localStorage.getItem("adminInfo"))?.admin;
+  const adminInfo = JSON.parse(localStorage.getItem("adminInfo"));
   const studentInfo = JSON.parse(localStorage.getItem("studentInfo"))?.student;
 
   const handleLogout = () => {
     if (adminInfo) {
       localStorage.removeItem("adminInfo");
+      localStorage.removeItem("adminToken");
+
       navigate("/admin-login");
     } else if (studentInfo) {
       localStorage.removeItem("studentInfo");
+      localStorage.removeItem("studentToken");
       navigate("/student-login");
     }
   };

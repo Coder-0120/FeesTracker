@@ -5,8 +5,8 @@ import "../Styles/StudentAlert.css";
 const StudentAlerts = () => {
   const [alerts, setAlerts] = useState([]);
   const [loading, setLoading] = useState(true);
-    const studentInfo = JSON.parse(localStorage.getItem("studentInfo"))?.student;
-    const studentId=studentInfo._id;
+  const studentInfo = JSON.parse(localStorage.getItem("studentInfo"))?.student;
+  const studentId = studentInfo?._id;
 
 
 
@@ -16,7 +16,11 @@ const StudentAlerts = () => {
 
   const fetchAlerts = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/alerts/student/${studentId}`);
+      const res = await axios.get(`http://localhost:5000/api/alerts/student/${studentId}`,{
+        headers:{
+          Authorization: `Bearer ${localStorage.getItem("studentToken")}`,
+        }
+      });
       setAlerts(res.data);
     } catch (err) {
       console.error("Error fetching alerts:", err);

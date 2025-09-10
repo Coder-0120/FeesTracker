@@ -19,6 +19,7 @@ const StudentLogin = () => {
       });
 
       const student = response.data; 
+      localStorage.setItem('studentToken', student.token);
       localStorage.setItem('studentInfo', JSON.stringify(student));
       alert('Login successful');
       navigate('/student-dashboard');

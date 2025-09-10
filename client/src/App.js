@@ -13,6 +13,14 @@ import StudentsbyBranch from './Pages/StudentsbyBranch';
 import StudentAlerts from './Pages/StudentAlerts';
 import AdminAlerts from './Pages/AdminAlerts';
 import Analytics from './Pages/Analytics';
+import { Navigate } from 'react-router-dom';
+
+const AdminProtectedRoute = ({ children }) => {
+
+  const isLoggedIn = localStorage.getItem("adminInfo"); 
+  return isLoggedIn ? children : <Navigate to="/admin-login" />;
+};
+
 
 function App() {
   return (
@@ -26,14 +34,15 @@ function App() {
         <Route path='/student-dashboard' element={<StudentDashboard/>}></Route>
         <Route path='/student-alerts' element={<StudentAlerts/>}></Route>
         <Route path='/admin-login' element={<AdminLogin/>}></Route>
-        <Route path='/admin-dashboard' element={<AdminDashboard/>}></Route>
-        <Route path='/admin-alerts' element={<AdminAlerts/>}></Route>
-        <Route path='/analytics' element={<Analytics/>}></Route>
-        <Route path='/manage-students' element={<ManageStudents/>}></Route>
-        <Route path='/manage-students/:branch' element={<StudentsbyBranch/>}></Route>
+        <Route path='/admin-dashboard' element={<AdminProtectedRoute><AdminDashboard/></AdminProtectedRoute>}></Route>
+        <Route path='/admin-alerts' element={<AdminProtectedRoute><AdminAlerts/></AdminProtectedRoute>}></Route>
+        <Route path='/analytics' element={<AdminProtectedRoute><Analytics/></AdminProtectedRoute>}></Route>
+        <Route path='/manage-students' element={<AdminProtectedRoute><ManageStudents/></AdminProtectedRoute>}></Route>
+        <Route path='/manage-students/:branch' element={<AdminProtectedRoute><StudentsbyBranch/></AdminProtectedRoute>}></Route>
       </Routes>
     </Router>
   );
 }
+
 
 export default App;

@@ -4,7 +4,7 @@ import "../Styles/AdminDashboard.css";
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
-  const adminInfo = JSON.parse(localStorage.getItem("adminInfo"))?.admin;
+  const adminInfo = JSON.parse(localStorage.getItem("adminInfo"));
   if (!adminInfo) {
     navigate("/admin-login"); 
     return null; // Prevent rendering if not logged in

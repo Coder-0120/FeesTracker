@@ -20,9 +20,11 @@ const AdminLogin = () => {
         email: admin.email,
         password: admin.password,
       });
+      const { token, admin: adminInfo } = response.data;
 
-      const adminData = response.data;
-      localStorage.setItem('adminInfo', JSON.stringify(adminData));
+      localStorage.setItem("adminToken", token);         // for auth headers
+      localStorage.setItem("adminInfo", JSON.stringify(adminInfo)); 
+      
       alert('Login successful');
       navigate('/admin-dashboard');
     } catch (err) {

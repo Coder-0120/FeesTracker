@@ -15,7 +15,11 @@ const StudentDashboard = () => {
 
     const fetchStudent = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/student/${loginStudent._id}`);
+        const res = await axios.get(`http://localhost:5000/api/student/${loginStudent._id}`,{
+          headers: {
+          Authorization: `Bearer ${localStorage.getItem("studentToken")}`,
+        },
+        });
         setStudentData(res.data);
       } catch (error) {
         console.error("Error fetching student data:", error);

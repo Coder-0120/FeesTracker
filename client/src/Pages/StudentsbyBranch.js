@@ -23,8 +23,11 @@ const StudentsbyBranch = () => {
   const fetchStudents = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/student/branch/${branch}`
-      );
+        `http://localhost:5000/api/student/branch/${branch}`,{
+           headers: {
+          Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
+        },
+      });
       const sorted = res.data.sort((a, b) => {
         // Calculate study year
         const currentYear = new Date().getFullYear();

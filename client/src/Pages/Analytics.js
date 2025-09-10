@@ -5,6 +5,7 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid,
 } from "recharts";
 
+
 const COLORS = ['#0088FE', '#00C49F', '#ee7716ff', '#FF8042', '#AA00FF', '#FF4560'];
 
 const Analytics = () => {
@@ -16,9 +17,18 @@ const Analytics = () => {
   useEffect(() => {
     const fetchAnalytics = async () => {
       try {
-        const branchRes = await axios.get("http://localhost:5000/api/admin/students-by-branch");
-        const yearRes = await axios.get("http://localhost:5000/api/admin/students-by-year");
-        const feeSemRes = await axios.get("http://localhost:5000/api/admin/students-fee-count-by-semester");
+        const branchRes = await axios.get("http://localhost:5000/api/admin/students-by-branch",{
+          headers: { Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
+        },
+        });
+        const yearRes = await axios.get("http://localhost:5000/api/admin/students-by-year",{
+          headers: { Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
+        },
+        });
+        const feeSemRes = await axios.get("http://localhost:5000/api/admin/students-fee-count-by-semester",{
+          headers: { Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
+        },
+        });
         setBranchData(branchRes.data);
         setYearData(yearRes.data);
         setFeeSemData(feeSemRes.data);
