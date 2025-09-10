@@ -7,6 +7,7 @@ const cors = require('cors');
 const StudentRoute = require("./routes/StudentRoute");
 const AdminRoute = require("./routes/AdminRoute");
 const AlertRoute = require("./routes/AlertRoute");
+const Verifytoken = require("./middlewares/Verifytoken");
 
 app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
 app.use(express.json());

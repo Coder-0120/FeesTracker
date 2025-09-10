@@ -1,8 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const Alert = require("../models/Alert");
+const Verifytoken = require("../middlewares/Verifytoken");
 
-router.post("/send", async (req, res) => {
+router.post("/send",async (req, res) => {
   const { studentId, message } = req.body;
   try {
     const alert = new Alert({ studentId, message });
@@ -13,7 +14,7 @@ router.post("/send", async (req, res) => {
   }
 });
 
-router.get("/student/:id", async (req, res) => {
+router.get("/student/:id",Verifytoken, async (req, res) => {
   try {
     const alerts = await Alert.find({ studentId: req.params.id }).sort({ sentAt: -1 });
     res.status(200).json(alerts);

@@ -3,6 +3,8 @@ const app = express();
 const Router = express.Router();
 const bcrypt = require('bcryptjs');
 const StudentModel = require('../models/Student');
+const jwt = require('jsonwebtoken');
+const Verifytoken = require('../middlewares/Verifytoken');
 
 Router.post("/register", async (req, res) => {
 
@@ -48,14 +50,19 @@ Router.post("/login",async(req,res)=>{
     if (!isMatch) {
       return res.status(400).json({ success: false, message: "Invalid roll number or password" });
     }
+     const token = jwt.sign(
+          { id: student._id, email: student.email },
+          process.env.JWT_SECRET,
+          { expiresIn: "1h" }
+        );
 
-    return res.status(200).json({ success: true, message: "Login successful", student });
+    return res.status(200).json({ success: true, message: "Login successful", student, token });
   } catch (error) {
     console.error("Login error:", error.message);
     return res.status(500).json({ success: false, message: "Internal Server Error" });
   }
 });
-Router.get('/branch/:branch', async (req, res) => {
+Router.get('/branch/:branch',Verifytoken, async (req, res) => {
   try {
     const branch = req.params.branch;
     const students = await StudentModel.find({ branch });
@@ -125,7 +132,7 @@ Router.put("/updateFees/:id", async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 });
-Router.get("/:id", async (req, res) => {
+Router.get("/:id",Verifytoken, async (req, res) => {
   try {
     const student = await StudentModel.findById(req.params.id);
     if (!student) return res.status(404).json({ message: "Student not found" });
