@@ -60,3 +60,34 @@ It replaces manual paperwork with a **secure, transparent, and easy-to-use syste
 
 ---
 
+## ⚡ Getting Started
+
+Clone the repository  
+```bash
+git clone https://github.com/Coder-0120/FeesTracker.git
+cd FeesTracker
+```
+
+Install backend dependencies
+```bash
+cd server
+npm install
+cd--
+```
+
+Install frontend dependencies
+```bash
+cd client
+npm install
+```
+
+Create a .env file in the root directory:  
+- PORT=5000  
+- MONGO_URI=your_mongodb_connection_string
+
+Run the development server
+```bash
+npm run dev
+```
+Frontend will run at http://localhost:3000  
+Backend will run at http://localhost:5000
